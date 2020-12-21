@@ -20,6 +20,10 @@ struct Constants {
         static let apiGetFlowersPath = "/~victor.hernandez17/flowerdex/listFlowers.php"
         static let apiLoginPath = "/~victor.hernandez17/flowerdex/login.php"
         static let apiRegistrationPath = "/~victor.hernandez17/flowerdex/signup.php"
+        static let apiPutFavoritePath = "/~victor.hernandez17/flowerdex/putFavoriteFlower.php"
+        static let apiRemoveFavoritePath = "/~victor.hernandez17/flowerdex/removeFavoriteFlower.php"
+        static let apiPutFoundPath = "/~victor.hernandez17/flowerdex/putFoundFlower.php"
+        static let apiRemoveFoundPath = "/~victor.hernandez17/flowerdex/removeFoundFlower.php"
     }
     
     struct Colors {

@@ -11,7 +11,7 @@ import Combine
 
 /*
 class ContentDataSource: ObservableObject {
-  @Published var items = [FlowerItem]() // ListItem
+  @Published var items = [Flower]() // ListItem
   @Published var isLoadingPage = false
   private var currentPage = 1
   private var canLoadMorePages = true

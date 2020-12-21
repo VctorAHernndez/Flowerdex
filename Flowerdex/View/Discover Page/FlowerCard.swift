@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FlowerCard: View {
     
-    var flower: FlowerItem
+    var flower: Flower
     @ObservedObject var imageManager = ImageManager()
     var size: CGFloat = 150
     @Environment(\.colorScheme) var colorScheme
@@ -24,7 +24,7 @@ struct FlowerCard: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: self.size, height: self.size)
                     .background(colorScheme == .dark ? Constants.Colors.darkGrayColor : Color.white)
-                CardDescription(commonName: self.flower.commonName, genus: self.flower.genus, family: self.flower.family, size: self.size, isFavorite: self.flower.isFavorite)
+                CardDescription(flower: flower, size: size, isFavoriteLocal: flower.isFavorite)
             }
             
         }
@@ -40,31 +40,41 @@ struct FlowerCard: View {
 
 struct CardDescription: View {
     
-    var commonName: String
-    var genus: String
-    var family: String
+    var flower: Flower
     var size: CGFloat
-    var isFavorite: Bool
+    @State var isFavoriteLocal: Bool
+    @EnvironmentObject var fModel: FlowerService
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(self.commonName.capitalized)
+            Text(self.flower.commonName.capitalized)
                 .font(.headline)
             Spacer()
             HStack {
-                Text(self.genus + " > " + self.family)
+                Text(self.flower.genus + " > " + self.flower.family)
                     .font(.caption)
                 Spacer()
-                Button(action: {print("hello")}) { // 
-                    if self.isFavorite {
+                Button(action: {
+                    
+                    // Depending on past value
+                    if self.isFavoriteLocal {
+                        fModel.removeFavorite(self.flower.id)
+                    } else {
+                        fModel.putFavorite(self.flower.id)
+                    }
+                    
+                    // Change value after request
+                    self.isFavoriteLocal.toggle()
+                    
+                }) {
+                    if self.isFavoriteLocal {
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
                     } else {
                         Image(systemName: "star")
                             .foregroundColor(.black)
                     }
-                    
                 }
             }
         }

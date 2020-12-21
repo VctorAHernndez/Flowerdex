@@ -11,7 +11,7 @@
 		A51B4F772546674C002AFF05 /* FlowersResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B4F762546674C002AFF05 /* FlowersResponseModel.swift */; };
 		A51B4F7B25466A75002AFF05 /* flowers.json in Resources */ = {isa = PBXBuildFile; fileRef = A51B4F7A25466A75002AFF05 /* flowers.json */; };
 		A52FB5C42546C2EA000AD235 /* rawResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = A52FB5C32546C2EA000AD235 /* rawResponse.json */; };
-		A5711B8B255CE03000E727BB /* FlowerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5711B8A255CE03000E727BB /* FlowerItem.swift */; };
+		A5711B8B255CE03000E727BB /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5711B8A255CE03000E727BB /* Flower.swift */; };
 		A5711B8E255CE53900E727BB /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5711B8D255CE53900E727BB /* DummyData.swift */; };
 		A58640BA258F30AD00F626AB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58640B9258F30AD00F626AB /* LoginView.swift */; };
 		A58640BE258F30F200F626AB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58640BD258F30F200F626AB /* RegisterView.swift */; };
@@ -20,7 +20,7 @@
 		A59A27452545568A0052319F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59A27442545568A0052319F /* Assets.xcassets */; };
 		A59A27482545568A0052319F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59A27472545568A0052319F /* Preview Assets.xcassets */; };
 		A5AF3F5C2545FDEB0035AC9A /* FlowerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AF3F5B2545FDEB0035AC9A /* FlowerCard.swift */; };
-		A5EA2F24258FEC2300699182 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2F23258FEC2300699182 /* UserService.swift */; };
+		A5EA2F24258FEC2300699182 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2F23258FEC2300699182 /* AuthenticationService.swift */; };
 		A5EA2F28258FEC3D00699182 /* FlowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2F27258FEC3D00699182 /* FlowerService.swift */; };
 		A5EA2F2C258FF0BD00699182 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2F2B258FF0BD00699182 /* Constants.swift */; };
 		A5EA2F32258FF58200699182 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA2F31258FF58200699182 /* Responses.swift */; };
@@ -31,7 +31,7 @@
 		A5EE38AC257772200014D0BE /* FiltersSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE38AB257772200014D0BE /* FiltersSheet.swift */; };
 		A5EE38B0257818520014D0BE /* FlowersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE38AF257818520014D0BE /* FlowersList.swift */; };
 		A5EE38B3257818BE0014D0BE /* StatusIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE38B2257818BE0014D0BE /* StatusIcons.swift */; };
-		A5F0D2FC258F3D2200AF735C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F0D2FB258F3D2200AF735C /* UserModel.swift */; };
+		A5F0D2FC258F3D2200AF735C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F0D2FB258F3D2200AF735C /* User.swift */; };
 		A5F3271A25460C0B003BCE0F /* FlowerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F3271925460C0B003BCE0F /* FlowerDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		A51B4F762546674C002AFF05 /* FlowersResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowersResponseModel.swift; sourceTree = "<group>"; };
 		A51B4F7A25466A75002AFF05 /* flowers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = flowers.json; sourceTree = "<group>"; };
 		A52FB5C32546C2EA000AD235 /* rawResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rawResponse.json; sourceTree = "<group>"; };
-		A5711B8A255CE03000E727BB /* FlowerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerItem.swift; sourceTree = "<group>"; };
+		A5711B8A255CE03000E727BB /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		A5711B8D255CE53900E727BB /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		A58640B9258F30AD00F626AB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A58640BD258F30F200F626AB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		A59A27472545568A0052319F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A59A27492545568A0052319F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AF3F5B2545FDEB0035AC9A /* FlowerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerCard.swift; sourceTree = "<group>"; };
-		A5EA2F23258FEC2300699182 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A5EA2F23258FEC2300699182 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A5EA2F27258FEC3D00699182 /* FlowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerService.swift; sourceTree = "<group>"; };
 		A5EA2F2B258FF0BD00699182 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A5EA2F31258FF58200699182 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		A5EE38AB257772200014D0BE /* FiltersSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersSheet.swift; sourceTree = "<group>"; };
 		A5EE38AF257818520014D0BE /* FlowersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowersList.swift; sourceTree = "<group>"; };
 		A5EE38B2257818BE0014D0BE /* StatusIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIcons.swift; sourceTree = "<group>"; };
-		A5F0D2FB258F3D2200AF735C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A5F0D2FB258F3D2200AF735C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5F3271925460C0B003BCE0F /* FlowerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,10 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				A51B4F762546674C002AFF05 /* FlowersResponseModel.swift */,
-				A5711B8A255CE03000E727BB /* FlowerItem.swift */,
+				A5711B8A255CE03000E727BB /* Flower.swift */,
 				A5EE3896257658400014D0BE /* Filters.swift */,
 				A5EE389025763D3A0014D0BE /* AuthenticationModel.swift */,
-				A5F0D2FB258F3D2200AF735C /* UserModel.swift */,
+				A5F0D2FB258F3D2200AF735C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A50EEFCC255D175400545CFE /* ContentDataSource.swift */,
-				A5EA2F23258FEC2300699182 /* UserService.swift */,
+				A5EA2F23258FEC2300699182 /* AuthenticationService.swift */,
 				A5EA2F27258FEC3D00699182 /* FlowerService.swift */,
 				A5EE38A3257700230014D0BE /* ImageManager.swift */,
 			);
@@ -270,7 +270,7 @@
 				A5EE38B0257818520014D0BE /* FlowersList.swift in Sources */,
 				A51B4F772546674C002AFF05 /* FlowersResponseModel.swift in Sources */,
 				A5EE3897257658400014D0BE /* Filters.swift in Sources */,
-				A5711B8B255CE03000E727BB /* FlowerItem.swift in Sources */,
+				A5711B8B255CE03000E727BB /* Flower.swift in Sources */,
 				A59A2741254556880052319F /* FlowerdexApp.swift in Sources */,
 				A5EA2F32258FF58200699182 /* Responses.swift in Sources */,
 				A58640BE258F30F200F626AB /* RegisterView.swift in Sources */,
@@ -279,9 +279,9 @@
 				A58640BA258F30AD00F626AB /* LoginView.swift in Sources */,
 				A5AF3F5C2545FDEB0035AC9A /* FlowerCard.swift in Sources */,
 				A5EE38B3257818BE0014D0BE /* StatusIcons.swift in Sources */,
-				A5EA2F24258FEC2300699182 /* UserService.swift in Sources */,
+				A5EA2F24258FEC2300699182 /* AuthenticationService.swift in Sources */,
 				A5711B8E255CE53900E727BB /* DummyData.swift in Sources */,
-				A5F0D2FC258F3D2200AF735C /* UserModel.swift in Sources */,
+				A5F0D2FC258F3D2200AF735C /* User.swift in Sources */,
 				A5EE38AC257772200014D0BE /* FiltersSheet.swift in Sources */,
 				A5EA2F28258FEC3D00699182 /* FlowerService.swift in Sources */,
 			);

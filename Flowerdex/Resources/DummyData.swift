@@ -7,7 +7,7 @@
 
 import Foundation
 
-let dummyFlowers: [FlowerItem] = load("flowers.json")
+let dummyFlowers: [Flower] = load("flowers.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

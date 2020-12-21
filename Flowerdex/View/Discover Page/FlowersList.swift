@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FlowersList: View {
-    var flowerList: [FlowerItem]
+    var flowerList: [Flower]
     var body: some View {
         if flowerList.count == 0 {
             // TODO: make this centered vertically within parent ScrollView
@@ -16,7 +16,7 @@ struct FlowersList: View {
         } else {
             LazyVStack {
                 ForEach(flowerList) { flower in
-                    NavigationLink(destination: FlowerDetailView(flower: flower)) {
+                    NavigationLink(destination: FlowerDetailView(flower: flower, hasBeenFoundLocal: flower.hasBeenFound)) {
                         FlowerCard(flower: flower)
                     }
                     .foregroundColor(Constants.Colors.blueGray)

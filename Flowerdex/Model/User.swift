@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  User.swift
 //  Flowerdex
 //
 //  Created by Víctor A. Hernández on 12/20/20.

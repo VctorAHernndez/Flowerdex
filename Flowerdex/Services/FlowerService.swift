@@ -10,7 +10,7 @@ import Foundation
 class FlowerService: ObservableObject {
     
     @Published var response: Response = .unfetched
-    @Published var items = [FlowerItem]()
+    @Published var items = [Flower]()
     
     
     private func getQueryParameters(_ filters: Filters) -> [URLQueryItem] {
@@ -47,9 +47,11 @@ class FlowerService: ObservableObject {
         components.scheme = Constants.Services.apiScheme
         components.host = Constants.Services.apiHost
         components.path = apiPath
-        components.queryItems = [
-            URLQueryItem(name: "user_id", value: "\(User.current.id!)"),
-        ]
+        if apiPath == Constants.Services.apiGetFlowersPath {
+            components.queryItems = [
+                URLQueryItem(name: "user_id", value: "\(User.current.id!)"),
+            ]
+        }
         return components
     }
     
@@ -109,6 +111,81 @@ class FlowerService: ObservableObject {
         request.httpMethod = "GET"
         self.fetchFlowers(request)
         
+    }
+    
+    
+    func wishlistOrHistorySkeletonRequest(_ flowerID: Int, remove: Bool, wishlist: Bool) {
+        
+        // Construct Body
+        let jsonObject : [String: Int] = [
+            "user_id": User.current.id!,
+            "flower_id": flowerID
+        ]
+        
+        guard let jsonData = try? JSONEncoder().encode(jsonObject) else {
+            print("Failed to encode JSON for \(flowerID)")
+            return
+        }
+        
+        print(String(data: jsonData, encoding: .utf8)!)
+        
+        // Construct URL
+        var path: String
+        if remove {
+            if wishlist {
+                path = Constants.Services.apiRemoveFavoritePath
+            } else {
+                path = Constants.Services.apiRemoveFoundPath
+            }
+        } else {
+            if wishlist {
+                path = Constants.Services.apiPutFavoritePath
+            } else {
+                path = Constants.Services.apiPutFoundPath
+            }
+        }
+        
+        print((remove ? "removing " : "putting ") + (wishlist ? "favorite" : "found"))
+        let components = getBaseURLComponent(path)
+        
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        
+        // Send POST request
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            print(response ?? "No response")
+            if let httpResponse = response as? HTTPURLResponse {
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        // alert that we removed favorite
+                        print("Success!")
+                    } else {
+                        // alert that we couldn't remove favorite
+                        print("Error! \(httpResponse.statusCode)")
+                    }
+                }
+            }
+        }.resume()
+    }
+    
+    
+    func removeFavorite(_ flowerID: Int) {
+        wishlistOrHistorySkeletonRequest(flowerID, remove: true, wishlist: true)
+    }
+    
+
+    func putFavorite(_ flowerID: Int) {
+        wishlistOrHistorySkeletonRequest(flowerID, remove: false, wishlist: true)
+    }
+    
+    
+    func removeFound(_ flowerID: Int) {
+        wishlistOrHistorySkeletonRequest(flowerID, remove: true, wishlist: false)
+    }
+
+    func putFound(_ flowerID: Int) {
+        wishlistOrHistorySkeletonRequest(flowerID, remove: false, wishlist: false)
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  FlowerItem.swift
+//  Flower.swift
 //  Flowerdex
 //
 //  Created by Víctor A. Hernández on 11/11/20.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FlowerItem: Hashable, Codable, Identifiable {
+struct Flower: Hashable, Codable, Identifiable {
     let id: Int
     let common_name: String?
     var commonName: String {

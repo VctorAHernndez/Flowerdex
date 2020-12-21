@@ -8,7 +8,7 @@
 import Foundation
 
 struct FlowersResponseModel: Hashable, Codable {
-    let data: [FlowerItem]?
+    let data: [Flower]?
     let links: Dictionary<String, String>?
     let meta: Dictionary<String, Int>?
     let error: String?

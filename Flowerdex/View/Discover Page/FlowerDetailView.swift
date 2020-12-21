@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FlowerDetailView: View {
     
-    var flower: FlowerItem
+    var flower: Flower
+    @State var hasBeenFoundLocal: Bool
     @ObservedObject var imageManager = ImageManager()
-//    @ObservedObject var foundManager = FoundManager()
+    @EnvironmentObject var fModel: FlowerService
     var size: CGFloat = 300
     
     var body: some View {
@@ -21,11 +22,22 @@ struct FlowerDetailView: View {
                     .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.semibold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Constants.Colors.blueGray)
-                    
                 //                .frame(width: .infinity, alignment: .center)
                 Spacer()
-                Button(action: {print("hello")}) { //self.hasBeenFound.toggle()
-                    if self.flower.hasBeenFound {
+                Button(action: {
+                    
+                    // Depending on past value
+                    if self.hasBeenFoundLocal {
+                        fModel.removeFound(self.flower.id)
+                    } else {
+                        fModel.putFound(self.flower.id)
+                    }
+                    
+                    // Change value after request
+                    self.hasBeenFoundLocal.toggle()
+                    
+                }) {
+                    if self.hasBeenFoundLocal {
                         Image(systemName: "eye")
                             .font(.title)
                             .foregroundColor(Constants.Colors.rausch)
@@ -59,7 +71,7 @@ struct FlowerDetailView: View {
 
 // TODO: account for text overflow
 struct FlowerInformationPane: View {
-    var flower: FlowerItem
+    var flower: Flower
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: nil) {
@@ -95,6 +107,6 @@ struct FlowerInformationPane: View {
 
 struct FlowerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FlowerDetailView(flower: dummyFlowers[0])
+        FlowerDetailView(flower: dummyFlowers[0], hasBeenFoundLocal: true)
     }
 }
