@@ -21,6 +21,7 @@ struct DiscoverView: View {
     @State var bloomMonths: Int = 0
     @State var scientificName: String = ""
     @State var commonName: String = ""
+    @State var flowerColor: String = ""
     
     init() {
         // FROM: https://sarunw.com/posts/uinavigationbar-changes-in-ios13/
@@ -42,12 +43,15 @@ struct DiscoverView: View {
                     FilterButtonIcon()
                 }
                 .sheet(isPresented: $showingFilterPane, content: {
-                    FiltersSheet(showingFilterPane: $showingFilterPane, page: $page, edible: $edible, vegetable: $vegetable, petalCount: $petalCount, growthMonths: $growthMonths, bloomMonths: $bloomMonths, scientificName: $scientificName, commonName: $commonName)
+                    FiltersSheet(showingFilterPane: $showingFilterPane, page: $page, edible: $edible, vegetable: $vegetable, petalCount: $petalCount, growthMonths: $growthMonths, bloomMonths: $bloomMonths, scientificName: $scientificName, commonName: $commonName, flowerColor: $flowerColor)
                 })
             )
         }
         .onAppear {
-            self.fModel.getFlowers(p: page, f: nil)
+            // Refresh only if there's no items loaded yet
+            if self.fModel.items.count == 0 {
+                self.fModel.getFlowers(p: page, f: nil)
+            }
         }
     }
     

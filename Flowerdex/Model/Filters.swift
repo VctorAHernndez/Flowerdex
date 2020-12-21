@@ -16,8 +16,9 @@ class Filters {
     var bloomMonths: Int
     var scientificName: String
     var commonName: String
+    var flowerColor: String
     
-    init(edible: Bool, vegetable: Bool, petalCount: Int, growthMonths: Int, bloomMonths: Int, scientificName: String, commonName: String) {
+    init(edible: Bool, vegetable: Bool, petalCount: Int, growthMonths: Int, bloomMonths: Int, scientificName: String, commonName: String, flowerColor: String) {
         self.edible = edible
         self.vegetable = vegetable
         self.petalCount = petalCount
@@ -25,6 +26,7 @@ class Filters {
         self.bloomMonths = bloomMonths
         self.scientificName = scientificName
         self.commonName = commonName
+        self.flowerColor = flowerColor
     }
     
 }

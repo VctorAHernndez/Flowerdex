@@ -21,14 +21,15 @@ struct FiltersSheet: View {
     @Binding var bloomMonths: Int
     @Binding var scientificName: String
     @Binding var commonName: String
+    @Binding var flowerColor: String
 
     var body: some View {
-        FilterFields(edible: $edible, vegetable: $vegetable, petalCount: $petalCount, growthMonths: $growthMonths, bloomMonths: $bloomMonths, scientificName: $scientificName, commonName: $commonName)
+        FilterFields(edible: $edible, vegetable: $vegetable, petalCount: $petalCount, growthMonths: $growthMonths, bloomMonths: $bloomMonths, scientificName: $scientificName, commonName: $commonName, flowerColor: $flowerColor)
         
         Spacer()
         
         Button(action: {
-            let filters = Filters(edible: edible, vegetable: vegetable, petalCount: petalCount, growthMonths: growthMonths, bloomMonths: bloomMonths, scientificName: scientificName, commonName: commonName)
+            let filters = Filters(edible: edible, vegetable: vegetable, petalCount: petalCount, growthMonths: growthMonths, bloomMonths: bloomMonths, scientificName: scientificName, commonName: commonName, flowerColor: flowerColor)
             
             self.fModel.getFlowers(p: page, f: filters)
             

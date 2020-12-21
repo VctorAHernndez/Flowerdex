@@ -20,13 +20,13 @@ class FlowerService: ObservableObject {
         list.append(URLQueryItem(name: "vegetable", value: "\(filters.vegetable)"))
         
         if filters.commonName != "" {
-            list.append(URLQueryItem(name: "q", value: filters.commonName))
+            list.append(URLQueryItem(name: "q", value: filters.commonName.lowercased()))
         }
-//        list.append(URLQueryItem(name: "common_name", value: filters.commonName)) // if common_name was empty, which didn't make sense
+//        list.append(URLQueryItem(name: "common_name", value: filters.commonName.lowercased())) // if common_name was empty, which didn't make sense
         
 
         if filters.scientificName != "" {
-            list.append(URLQueryItem(name: "scientific_name", value: filters.scientificName))
+            list.append(URLQueryItem(name: "scientific_name", value: filters.scientificName.lowercased()))
         }
         
         if filters.growthMonths > 0 {
@@ -35,6 +35,10 @@ class FlowerService: ObservableObject {
         
         if filters.bloomMonths > 0 {
             list.append(URLQueryItem(name: "bloom_months", value: "\(filters.bloomMonths)"))
+        }
+        
+        if filters.flowerColor != "" {
+            list.append(URLQueryItem(name: "flower_color", value: filters.flowerColor.lowercased()))
         }
         
         return list

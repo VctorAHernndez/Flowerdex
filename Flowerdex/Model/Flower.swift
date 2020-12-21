@@ -9,6 +9,7 @@ import Foundation
 
 struct Flower: Hashable, Codable, Identifiable {
     let id: Int
+    
     let common_name: String?
     var commonName: String {
         if let cm = common_name {
@@ -17,24 +18,12 @@ struct Flower: Hashable, Codable, Identifiable {
             return scientificName
         }
     }
+    
     let slug: String // *
+    
     let scientific_name: String
     var scientificName: String { scientific_name }
-    let year: Int?
-    let bibliography: String?
-    let author: String? // *
-    let status: String // *
-    let rank: String // *
-    let family_common_name: String?
-    var familyCommonName: String {
-        if let fcn = family_common_name {
-            return fcn
-        } else {
-            return "[Family Common Name]"
-        }
-    }
-    let genus_id: Int // *
-    var genusID: Int { genus_id }
+    
     let image_url: String?
     var imageURL: String {
         if let iu = image_url {
@@ -43,20 +32,37 @@ struct Flower: Hashable, Codable, Identifiable {
             return "[Image URL]"
         }
     }
+    
+    let year: Int?
+    let bibliography: String?
+    let author: String? // *
+    
+    let family_common_name: String?
+    var familyCommonName: String {
+        if let fcn = family_common_name {
+            return fcn
+        } else {
+            return "[Family Common Name]"
+        }
+    }
+    
+    let genus_id: Int // *
+    var genusID: Int { genus_id }
+    
+    let status: String // *
+    let rank: String // *
     let synonyms: [String]
     let genus: String
     let family: String
-    let links: Dictionary<String, String> // FlowerLinks
+    let links: FlowerLinks
     
     // Properties added by us
     let isFavorite: Bool
     let hasBeenFound: Bool
 }
 
-/*
-struct FlowerLinks: Codable {
-    // let self: String
+struct FlowerLinks: Codable, Hashable {
+     let `self`: String
     let plant: String
     let genus: String
 }
-*/

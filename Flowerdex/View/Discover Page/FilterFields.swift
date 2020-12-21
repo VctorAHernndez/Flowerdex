@@ -16,6 +16,7 @@ struct FilterFields: View {
     @Binding var bloomMonths: Int
     @Binding var scientificName: String
     @Binding var commonName: String
+    @Binding var flowerColor: String
     
     var body: some View {
         VStack {
@@ -27,6 +28,7 @@ struct FilterFields: View {
             BloomMonthsField(bloomMonths: $bloomMonths)
             CommonNameField(commonName: $commonName)
             ScientificNameField(scientificName: $scientificName)
+            FlowerColorField(flowerColor: $flowerColor)
         }
         .padding()
     }
@@ -38,6 +40,20 @@ struct MainText: View {
             .font(.title2)
             .bold()
             .foregroundColor(Color("Rausch"))
+    }
+}
+
+struct FlowerColorField: View {
+    @Binding var flowerColor: String
+    @Environment(\.colorScheme) var colorScheme
+    var body: some View {
+        TextField("FlowerColor", text: $flowerColor)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
+            .padding()
+            .background(colorScheme == .dark ? Constants.Colors.darkGrayColor : Constants.Colors.lightGrayColor)
+            .cornerRadius(5.0)
+            .padding(.bottom, 5)
     }
 }
 
