@@ -17,6 +17,7 @@
 		A5799DB4259157AC003E975D /* FlowerVerbose.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5799DB3259157AC003E975D /* FlowerVerbose.swift */; };
 		A5799DB72591594D003E975D /* HistoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5799DB62591594D003E975D /* HistoryResponseModel.swift */; };
 		A5799DBB25915C2B003E975D /* FlowerVerboseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5799DBA25915C2B003E975D /* FlowerVerboseDetailView.swift */; };
+		A5799DC2259162E2003E975D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5799DC1259162E2003E975D /* SettingsView.swift */; };
 		A58640BA258F30AD00F626AB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58640B9258F30AD00F626AB /* LoginView.swift */; };
 		A58640BE258F30F200F626AB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58640BD258F30F200F626AB /* RegisterView.swift */; };
 		A59A2741254556880052319F /* FlowerdexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A2740254556880052319F /* FlowerdexApp.swift */; };
@@ -52,6 +53,7 @@
 		A5799DB3259157AC003E975D /* FlowerVerbose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerVerbose.swift; sourceTree = "<group>"; };
 		A5799DB62591594D003E975D /* HistoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponseModel.swift; sourceTree = "<group>"; };
 		A5799DBA25915C2B003E975D /* FlowerVerboseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerVerboseDetailView.swift; sourceTree = "<group>"; };
+		A5799DC1259162E2003E975D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A58640B9258F30AD00F626AB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A58640BD258F30F200F626AB /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A59A273D254556880052319F /* Flowerdex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flowerdex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,10 +121,19 @@
 				A58640AE258F213600F626AB /* Authentication Page */,
 				A5EE38B6257819AA0014D0BE /* Discover Page */,
 				A5EA2F382590A61000699182 /* History Page */,
-				A5EA2F3E2590A65A00699182 /* MainView.swift */,
+				A5799DC0259162C2003E975D /* Settings Page */,
 				A5EE38B2257818BE0014D0BE /* StatusIcons.swift */,
+				A5EA2F3E2590A65A00699182 /* MainView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A5799DC0259162C2003E975D /* Settings Page */ = {
+			isa = PBXGroup;
+			children = (
+				A5799DC1259162E2003E975D /* SettingsView.swift */,
+			);
+			path = "Settings Page";
 			sourceTree = "<group>";
 		};
 		A58640AE258F213600F626AB /* Authentication Page */ = {
@@ -306,6 +317,7 @@
 				A5799DBB25915C2B003E975D /* FlowerVerboseDetailView.swift in Sources */,
 				A58640BE258F30F200F626AB /* RegisterView.swift in Sources */,
 				A5EE388D2576362B0014D0BE /* FilterFields.swift in Sources */,
+				A5799DC2259162E2003E975D /* SettingsView.swift in Sources */,
 				A5F3271A25460C0B003BCE0F /* FlowerDetailView.swift in Sources */,
 				A58640BA258F30AD00F626AB /* LoginView.swift in Sources */,
 				A5AF3F5C2545FDEB0035AC9A /* FlowerCard.swift in Sources */,

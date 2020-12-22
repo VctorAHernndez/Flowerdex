@@ -21,6 +21,12 @@ struct MainView: View {
                     Image(systemName: "square.and.pencil")
                     Text("History")
                 }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gearshape")
+                    Text("Settings")
+                }
         }
         .accentColor(Constants.Colors.rausch)
     }

@@ -57,4 +57,8 @@ class User: Codable, Identifiable { // not a hashable struct anymore :(
         }
     }
     
+    static func logout() {
+        UserDefaults.standard.removeObject(forKey: Constants.UserDefaults.currentUser)
+    }
+    
 }
